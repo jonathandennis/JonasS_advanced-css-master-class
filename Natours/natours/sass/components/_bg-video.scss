@@ -1,0 +1,17 @@
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: .15;
+    overflow: hidden; //clips video to maintain edge border
+    
+
+    &__content {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; // for elements like pictures and video (not background as there is another property for that) "cover" will fill entire parent while maintaining its aspect ratio automatically clipping overflow
+    }
+}

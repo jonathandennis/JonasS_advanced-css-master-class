@@ -1,0 +1,34 @@
+.features {
+    //background-color: $color-grey-light-2;
+    grid-column: center-start / center-end;
+
+    margin: 15rem 0;
+
+    display: grid; //make features its own grid container
+    //grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr)); /* easy way to implement responsive design without media query. Grid will automatically set grid based on screen width available keeping cell size relative to minmax size set. */
+    grid-gap: 6rem;
+    align-items: start; // makes everything look the same regardless of amount of type/content. puts empty space at bottom/sameplace 
+}
+
+.feature {
+
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    grid-row-gap: 1.5rem;
+    grid-column-gap: 2.5rem;
+    //gap: 1.5rem 2.5rem;
+    
+
+    &__icon {
+        fill: $color-primary;
+        width: 4.5rem;
+        height: 4.5rem;
+        grid-row: 1 / span 2; /* span down best as cell sizing is better. Overrides auto placement that puts type below icon in grid, pushing it to cell below header, while maintaining proper size for icon and type. */
+        transform: translateY(-1rem);
+    }
+
+    &__text {
+        font-size: 1.7rem;
+    }
+}
